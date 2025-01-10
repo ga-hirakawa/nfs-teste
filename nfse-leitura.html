@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>NFS-e</title>
+    </head>
+    <body>
+        <div>
+            <div>
+                <div>
+                    <h3>🟦 Valor total da venda:</h3>
+                    R$ <input type="number" min="0" step="0.1" id="input-venda-valor" class="input-venda-valor" placeholder="0,00" onfocusout="atualizarCampoValor(this)"></input>
+                
+                </div>
+
+                <div>
+                    <h3>🟦 Porcentagem de impostos:</h3>
+
+                    <table>
+                        <tr>
+                            <th>IRPF</th>
+                            <th><input type="number" min="0" max="100" step="0.1" id="input-venda-irpf" class="input-venda-irpf" placeholder="0,00" onfocusout="atualizarCampoPorcentagem(this)"></input> %</th>
+                        </tr>
+                        <tr>
+                            <th>PIS</th>
+                            <th><input type="number" min="0" max="100" step="0.1" id="input-venda-pis" class="input-venda-pis" placeholder="0,00" onfocusout="atualizarCampoPorcentagem(this)"></input> %</th>
+                        </tr>
+                        <tr>
+                            <th>COFINS</th>
+                            <th><input type="number" min="0" max="100" step="0.1" id="input-venda-cofins" class="input-venda-cofins" placeholder="0,00" onfocusout="atualizarCampoPorcentagem(this)"></input> %</th>
+                        </tr>
+                        <tr>
+                            <th>INSS</th>
+                            <th><input type="number" min="0" max="100" step="0.1" id="input-venda-inss" class="input-venda-inss" placeholder="0,00" onfocusout="atualizarCampoPorcentagem(this)"></input> %</th>
+                        </tr>
+                        <tr>
+                            <th>ISSQN</th>
+                            <th><input type="number" min="0" max="100" step="0.1" id="input-venda-issqn" class="input-venda-issqn" placeholder="0,00" onfocusout="atualizarCampoPorcentagem(this)"></input> %</th>
+                            
+                        </tr>
+                    </table>
+                </div>
+                
+                <div>
+                    <h3>🟦 Itens vendidos:</h3>
+                    <button onclick="adicionarLinhaTabela()">➕ Adicionar</button>
+                    <!--input type="number" id="input-venda-itens" class="input-venda-itens"></input-->
+
+                    <table id="tabela-vendas-itens">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ações</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>🟩 Resultados:</h3>
+                    <button onclick="exibir()">💲 Calcular</button> 
+                </div>
+
+                <div id="resultados-vendas-calculos"></div>
+                
+            </div>
+        </div>
+        
+        <script src="./nfse-leitura-tabela.js"></script>
+        <script src="./nfse-leitura-calcular-impostos.js"></script>
+        <script src="./nfse-leitura-formatar-campos.js"></script>
+        
+    </body>
+    <footer>
+    
+    </footer>    
+</html>
